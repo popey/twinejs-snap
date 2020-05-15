@@ -1,0 +1,53 @@
+name: twinejs
+base: core18
+version: '2.3.8'
+summary: Twine, a tool for telling interactive, nonlinear stories 
+description: |
+  You don't need to write any code to create a simple story with Twine
+  but you can extend your stories with variables, conditional logic,
+  images, CSS, and JavaScript when you're ready.
+  Twine publishes directly to HTML, so you can post your work nearly 
+  anywhere. Anything you create with it is completely free to use any 
+  way you like, including for commercial purposes.
+  Twine was originally created by Chris Klimas in 2009 and is now 
+  maintained by a whole bunch of people at several different repositories. 
+
+grade: stable
+confinement: strict
+
+plugs:
+  browser-sandbox:
+    interface: browser-support
+    allow-sandbox: false
+
+parts:
+  launcher:
+    plugin: dump
+    source: snap/local
+  twinejs:
+    plugin: dump
+    source: 
+      - on amd64: https://github.com/klembot/twinejs/releases/download/$SNAPCRAFT_PROJECT_VERSION/twine_$SNAPCRAFT_PROJECT_VERSION_linux64.zip
+      - on i386: https://github.com/klembot/twinejs/releases/download/$SNAPCRAFT_PROJECT_VERSION/twine_$SNAPCRAFT_PROJECT_VERSION_linux32.zip
+    stage-packages:
+      - libxss1
+      - libnspr4
+      - libnss3
+      - libglu1-mesa
+
+apps:
+  twinejs:
+    command: launch
+    extensions: [gnome-3-28]
+    environment:
+      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio:$LD_LIBRARY_PATH
+    plugs:
+      - desktop
+      - desktop-legacy
+      - x11
+      - unity7
+      - home
+      - removable-media
+      - audio-playback
+      - opengl
+      - browser-sandbox

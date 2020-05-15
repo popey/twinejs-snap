@@ -1,0 +1,10 @@
+#!/bin/bash
+# Launcher to setup tmp dir
+
+HOME=$(getent passwd $(id -u) | cut -d ':' -f 6)
+source $SNAP/gnome-platform/etc/xdg/user-dirs.defaults
+
+TMPDIR=$HOME/$DOCUMENTS/Twine/tmp
+mkdir -p $TMPDIR
+echo $TMPDIR
+exec $SNAP/twine
