@@ -16,7 +16,8 @@ grade: stable
 confinement: strict
 
 architectures:
-  - build-on: [amd64, i386]
+  - build-on: amd64
+  - build-on: i386
 
 plugs:
   browser-sandbox:
