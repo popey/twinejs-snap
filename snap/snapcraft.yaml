@@ -11,7 +11,7 @@ description: |
   way you like, including for commercial purposes.
   Twine was originally created by Chris Klimas in 2009 and is now 
   maintained by a whole bunch of people at several different repositories. 
-
+compression: lzo
 grade: stable
 confinement: strict
 
