@@ -1,6 +1,6 @@
 name: twinejs
 base: core18
-version: '2.3.14'
+version: '2.3.15'
 summary: Twine, a tool for telling interactive, nonlinear stories 
 description: |
   You don't need to write any code to create a simple story with Twine
