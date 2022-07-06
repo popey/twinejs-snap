@@ -40,6 +40,8 @@ parts:
       - libnspr4
       - libnss3
       - libglu1-mesa
+    prime:
+      - -$SNAPCRAFT_PART_INSTALL/chrome-sandbox
 
 apps:
   twinejs:
