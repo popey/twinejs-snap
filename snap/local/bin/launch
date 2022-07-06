@@ -7,4 +7,4 @@ source $SNAP/gnome-platform/etc/xdg/user-dirs.defaults
 TMPDIR=$HOME/$DOCUMENTS/Twine/tmp
 mkdir -p $TMPDIR
 echo $TMPDIR
-exec $SNAP/twine
+exec $SNAP/twine --no-sandbox
