@@ -18,6 +18,7 @@ confinement: strict
 architectures:
   - build-on: amd64
   - build-on: i386
+  - build-on: arm64
 
 plugs:
   browser-sandbox:
@@ -30,9 +31,10 @@ parts:
     source: snap/local
   twinejs:
     plugin: dump
-    source: 
-      - on amd64: https://github.com/klembot/twinejs/releases/download/$SNAPCRAFT_PROJECT_VERSION/twine_$SNAPCRAFT_PROJECT_VERSION_linux64.zip
-      - on i386: https://github.com/klembot/twinejs/releases/download/$SNAPCRAFT_PROJECT_VERSION/twine_$SNAPCRAFT_PROJECT_VERSION_linux32.zip
+    source:
+      - on amd64: https://github.com/klembot/twinejs/releases/download/$SNAPCRAFT_PROJECT_VERSION/Twine-$SNAPCRAFT_PROJECT_VERSION-Linux-x64.zip
+      - on i386: https://github.com/klembot/twinejs/releases/download/$SNAPCRAFT_PROJECT_VERSION/Twine-$SNAPCRAFT_PROJECT_VERSION-Linux-ia32.zip
+      - on arm64: https://github.com/klembot/twinejs/releases/download/$SNAPCRAFT_PROJECT_VERSION/Twine-$SNAPCRAFT_PROJECT_VERSION-Linux-arm64.zip
     stage-packages:
       - libxss1
       - libnspr4
