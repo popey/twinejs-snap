@@ -1,6 +1,6 @@
 name: twinejs
-base: core18
-version: '2.9.0'
+base: core22
+version: '2.9.1'
 summary: Twine, a tool for telling interactive, nonlinear stories 
 description: |
   You don't need to write any code to create a simple story with Twine
@@ -32,22 +32,18 @@ parts:
     plugin: dump
     source:
       - on amd64: https://github.com/klembot/twinejs/releases/download/$SNAPCRAFT_PROJECT_VERSION/Twine-$SNAPCRAFT_PROJECT_VERSION-Linux-x64.zip
-      - on i386: https://github.com/klembot/twinejs/releases/download/$SNAPCRAFT_PROJECT_VERSION/Twine-$SNAPCRAFT_PROJECT_VERSION-Linux-ia32.zip
       - on arm64: https://github.com/klembot/twinejs/releases/download/$SNAPCRAFT_PROJECT_VERSION/Twine-$SNAPCRAFT_PROJECT_VERSION-Linux-arm64.zip
     stage-packages:
       - libxss1
       - libnspr4
       - libnss3
-      - libglu1-mesa
     prime:
       - -chrome-sandbox
 
 apps:
   twinejs:
     command: launch
-    extensions: [gnome-3-28]
-    environment:
-      LD_LIBRARY_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
+    extensions: [gnome]
     plugs:
       - desktop
       - desktop-legacy
