@@ -9,9 +9,11 @@ jobs:
   snap:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - uses: snapcore/action-build@v1
       id: snapcraft
+    - name: Cat log
+      run: cat /home/runner/.local/state/snapcraft/log/snapcraft*.log
     - uses: actions/upload-artifact@v2
       with:
         name: 'snap'
