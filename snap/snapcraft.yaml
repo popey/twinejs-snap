@@ -42,7 +42,7 @@ parts:
 
 apps:
   twinejs:
-    command: launch
+    command: bin/launch
     extensions: [gnome]
     plugs:
       - desktop
