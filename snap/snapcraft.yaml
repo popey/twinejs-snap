@@ -50,6 +50,7 @@ apps:
       - x11
       - unity7
       - home
+      - network
       - removable-media
       - audio-playback
       - opengl
